@@ -34,16 +34,16 @@ export class EmployeesComponent {
     'anual_salary'
   ];
 
-  constructor(private service: EmployeeService, private snack : MatSnackBar) {
+  constructor(private service: EmployeeService, public snack : MatSnackBar) {
     this.getEmployees();
   }
 
 
-  openSnackBar(message: string) {
+  public openSnackBar(message: string) {
     this.snack.open(message, "OK", {duration: 5000})
   }
 
-  private getEmployees() {
+  public getEmployees() {
     this.service.getEmployees().subscribe({
       next: response => {
         this.employees = response

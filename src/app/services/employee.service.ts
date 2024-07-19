@@ -22,7 +22,6 @@ export class EmployeeService {
 
   public getEmployees(): Observable<Employee[]> {
     let apiUrl = `${url}${api.all.path}`;
-    console.log(apiUrl)
     return this.http.request<Employee[]>(api.all.method, apiUrl);
   }
 }
